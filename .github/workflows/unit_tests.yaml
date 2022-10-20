@@ -36,8 +36,10 @@ jobs:
         env:
           NODE_ENV: dev
 
-      - name: Jest Report
-        uses: ziishaned/jest-reporter-action@v0.0.1
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
         with:
-          github-token: ${{ secrets.TOKEN_GITHUB }}
-          test-command: "npm run test -- --coverage"
+          name: JEST Tests            # Name of the check run which will be created
+          path: reports/jest-*.xml    # Path to test results
+          reporter: jest-junit 
