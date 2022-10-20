@@ -52,10 +52,22 @@
       "!src/**/*.store.{js,jsx,ts,tsx}"
     ],
     "coverageThreshold": {
-      "global": {
-        "functions": 0.1,
-        "lines": 0.1,
-        "statements": 0.1
+      "global": {}
+    },
+    "babel": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ],
+        "@babel/preset-typescript"
+      ],
+      "transform": {
+        "\\.[jt]sx?$": "babel-jest"
       }
     }
   }
