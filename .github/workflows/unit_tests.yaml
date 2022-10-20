@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Test
-        run: npm run test:ci -- --coverage
+        run: npm run test:ci
         env:
           NODE_ENV: dev
 
