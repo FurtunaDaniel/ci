@@ -10,6 +10,19 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
       - name: Setup Node.js environment v16
         uses: actions/setup-node@v3
         with:
@@ -23,5 +36,8 @@ jobs:
         env:
           NODE_ENV: dev
 
-      - name: Jest coverage report
-        uses: ArtiomTr/jest-coverage-report-action@v2.1.1
+        name: Jest Report
+        uses: ziishaned/jest-reporter-action@v0.0.1
+        with:
+          github-token: ${{ secrets.TOKEN_GITHUB }}
+          test-command: "yarn jest --coverage"
