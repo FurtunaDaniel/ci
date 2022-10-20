@@ -36,7 +36,7 @@ jobs:
         env:
           NODE_ENV: dev
 
-        name: Jest Report
+      - name: Jest Report
         uses: ziishaned/jest-reporter-action@v0.0.1
         with:
           github-token: ${{ secrets.TOKEN_GITHUB }}
