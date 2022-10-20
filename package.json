@@ -53,7 +53,14 @@
       "!<rootDir>/node_modules/",
       "!src/**/*.store.{js,jsx,ts,tsx}"
     ],
-    "coverageThreshold": false
+    "coverageThreshold": {
+      "global": {
+        "branches": 1,
+        "functions": 1,
+        "lines": 1,
+        "statements": 1
+      }
+    }
   },
   "transform": {
     "\\.[jt]sx?$": "babel-jest"
