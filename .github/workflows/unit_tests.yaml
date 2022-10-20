@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Test
-        run: npm run test:ci
+        run: npm run test:ci -- --coverage
         env:
           NODE_ENV: dev
 
@@ -41,5 +41,5 @@ jobs:
         if: success() || failure()    # run this step even if previous step failed
         with:
           name: JEST Tests            # Name of the check run which will be created
-          path: reports/jest-*.xml    # Path to test results
+          path: coverage/clover.xml    # Path to test results
           reporter: jest-junit 
