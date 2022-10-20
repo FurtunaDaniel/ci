@@ -20,7 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:ci": "CI=true npm test -- --coverage",
+    "test:ci": "CI=true npm test",
     "eject": "react-scripts eject",
     "test-script": "jest"
   },
