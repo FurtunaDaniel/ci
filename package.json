@@ -19,10 +19,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test -- --coverage",
-    "test:ci": "CI=true npm test",
-    "eject": "react-scripts eject",
-    "test-script": "jest"
+    "test": "react-scripts test",
+    "test:ci": "CI=true npm test -- --coverage",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -43,9 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.18.6",
-    "cypress": "^10.10.0",
-    "babel-jest": "^29.2.1"
+    "cypress": "^10.10.0"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -55,14 +52,11 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 1,
-        "functions": 1,
-        "lines": 1,
-        "statements": 1
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
       }
     }
-  },
-  "transform": {
-    "\\.[jt]sx?$": "babel-jest"
   }
 }
