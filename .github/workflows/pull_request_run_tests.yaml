@@ -44,8 +44,8 @@ jobs:
       #     path: coverage/clover.xml # Path to test results
       #     reporter: jest-junit
 
-  integration-test-run:
-    # needs: build
+  cypress-run:
+    needs: unit-test-run
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
@@ -57,3 +57,4 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           env: ENVIRONMENT=development,TEST_AUTOMATION_USERNAME=${{ secrets.DEV_TEST_AUTOMATION_USERNAME }},TEST_AUTOMATION_PASSWORD=${{ secrets.DEV_TEST_AUTOMATION_PASSWORD }},region=${{ secrets.AWS_COGNITO_REGION }},userPoolId=${{secrets.REACT_APP_USER_POOL_ID}},userPoolWebClientId=${{secrets.REACT_APP_APP_CLIENT_ID}}
+          video: false
