@@ -78,16 +78,6 @@
         "lines": 0,
         "statements": 0
       }
-    },
-    "reporters": [
-      "default",
-      [
-        "jest-junit",
-        {
-          "outputDirectory": "reports",
-          "outputName": "report.xml"
-        }
-      ]
-    ]
+    }
   }
 }

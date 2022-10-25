@@ -2,7 +2,7 @@ name: Run unit tests on PR opened
 on: pull_request
 
 jobs:
-  unit-test:
+  unit-test-run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
@@ -36,15 +36,15 @@ jobs:
         env:
           NODE_ENV: dev
 
-      - name: Test Report
-        uses: dorny/test-reporter@v1
-        if: success() || failure() # run this step even if previous step failed
-        with:
-          name: JEST Tests # Name of the check run which will be created
-          path: coverage/clover.xml # Path to test results
-          reporter: jest-junit
+      # - name: Test Report
+      #   uses: dorny/test-reporter@v1
+      #   if: success() || failure() # run this step even if previous step failed
+      #   with:
+      #     name: JEST Tests # Name of the check run which will be created
+      #     path: coverage/clover.xml # Path to test results
+      #     reporter: jest-junit
 
-  cypress-test-run:
+  integration-test-run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
