@@ -8,17 +8,17 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node-version: [14.x]
+        node-version: [16.x]
         browser: [chrome, firefox]
     services:
       cypress:
-        image: cypress/included:8.7.0
+        image: cypress/included:9.4.1
     steps:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: npm install
     - name: Run tests
-      uses: cypress-io/github-action@v2.7.2
+      uses: cypress-io/github-action@v5
       with:
         record: false
         parallel: true
