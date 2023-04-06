@@ -2,8 +2,81 @@ name: Run tests on PR opened
 on: pull_request
 
 jobs:
-  test:
+  unit-test-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Setup Node.js environment v16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install
+        run: npm ci
+
+      - name: Test
+        run: npm run test:ci
+        env:
+          NODE_ENV: dev
+
+      # - name: Test Report
+      #   uses: dorny/test-reporter@v1
+      #   if: success() || failure() # run this step even if previous step failed
+      #   with:
+      #     name: JEST Tests # Name of the check run which will be created
+      #     path: coverage/clover.xml # Path to test results
+      #     reporter: jest-junit
+
+    # cypress-run:
+    #   needs: unit-test-run
+    #   runs-on: ubuntu-latest
+    #   steps:
+    #     - name: Checkout source code
+    #       uses: actions/checkout@v3
+
+    #     # Install NPM dependencies, cache them correctly
+    #     # and run all Cypress tests
+    #     - name: Cypress run
+    #       uses: cypress-io/github-action@v4
+    #       env:
+    #           ENVIRONMENT: development
+    #           TEST_AUTOMATION_USERNAME: ${{ secrets.DEV_TEST_AUTOMATION_USERNAME }}
+    #           TEST_AUTOMATION_PASSWORD: ${{ secrets.DEV_TEST_AUTOMATION_PASSWORD }}
+    #           region: ${{ secrets.AWS_COGNITO_REGION }}
+    #           userPoolId: ${{secrets.REACT_APP_USER_POOL_ID}}
+    #           userPoolWebClientId: ${{secrets.REACT_APP_APP_CLIENT_ID}}
+    #           # pass GitHub token to detect new build vs re-run build
+    #           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    #           record: false
+
+  cypress-run:
     # https://github.com/bahmutov/cypress-workflows
     uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v1
     with:
       n: 4
+      ENVIRONMENT: development
+      TEST_AUTOMATION_USERNAME: ${{ secrets.DEV_TEST_AUTOMATION_USERNAME }}
+      TEST_AUTOMATION_PASSWORD: ${{ secrets.DEV_TEST_AUTOMATION_PASSWORD }}
+      region: ${{ secrets.AWS_COGNITO_REGION }}
+      userPoolId: ${{secrets.REACT_APP_USER_POOL_ID}}
+      userPoolWebClientId: ${{secrets.REACT_APP_APP_CLIENT_ID}}
+      # pass GitHub token to detect new build vs re-run build
+      GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      record: false
