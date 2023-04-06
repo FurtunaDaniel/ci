@@ -16,7 +16,7 @@ jobs:
         with:
           runTests: false
           build: npm run build
-          
+
       - name: Save build folder
         uses: actions/upload-artifact@v3
         with:
@@ -46,13 +46,13 @@ jobs:
         with:
           name: build
           path: build
-          
+
       - name: Execute tests
         uses: cypress-io/github-action@v5
         with:
           # We have already installed all dependencies above
           install: false
-          # Use the spec provided to this worker to execute the test 
+          # Use the spec provided to this worker to execute the test
           spec: ${{ matrix.spec }}
 
   test-component:
@@ -71,7 +71,7 @@ jobs:
         with:
           name: build
           path: build
-          
+
       - name: Execute tests
         uses: cypress-io/github-action@v5
         with:
@@ -79,72 +79,3 @@ jobs:
           # To run component tests we need to use "cypress run-ct"
           command: npx cypress run-ct
           spec: ${{ matrix.spec }}
-    runs-on: ubuntu-latest
-    needs: prepare
-    strategy:
-      fail-fast: false
-      matrix:
-        spec: ${{ fromJson(needs.prepare.outputs.component-tests) }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Download the build folders
-        uses: actions/download-artifact@v3
-        with:
-          name: build
-          path: build
-          
-      - name: Execute tests
-        uses: cypress-io/github-action@v5
-        with:
-          install: false
-          # To run component tests we need to use "cypress run-ct"
-          command: npx cypress run-ct
-          spec: ${{ matrix.spec }}
-
-
-    runs-on: ubuntu-latest
-    needs: prepare
-    strategy:
-      fail-fast: false
-      matrix:
-        spec: ${{ fromJson(needs.prepare.outputs.component-tests) }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Download the build folders
-        uses: actions/download-artifact@v3
-        with:
-          name: build
-          path: build
-          
-      - name: Execute tests
-        uses: cypress-io/github-action@v5
-        with:
-          install: false
-          # To run component tests we need to use "cypress run-ct"
-          command: npx cypress run-ct
-          spec: ${{ matrix.spec }}
-  # cypress-run:
-  #   needs: unit-test-run
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout source code
-  #       uses: actions/checkout@v3
-
-  #     # Install NPM dependencies, cache them correctly
-  #     # and run all Cypress tests
-  #     - name: Cypress run
-  #       uses: cypress-io/github-action@v4
-  #       env:
-  #           ENVIRONMENT: development
-  #           TEST_AUTOMATION_USERNAME: ${{ secrets.DEV_TEST_AUTOMATION_USERNAME }}
-  #           TEST_AUTOMATION_PASSWORD: ${{ secrets.DEV_TEST_AUTOMATION_PASSWORD }}
-  #           region: ${{ secrets.AWS_COGNITO_REGION }}
-  #           userPoolId: ${{secrets.REACT_APP_USER_POOL_ID}}
-  #           userPoolWebClientId: ${{secrets.REACT_APP_APP_CLIENT_ID}}
-  #           # pass GitHub token to detect new build vs re-run build
-  #           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  #           record: false
