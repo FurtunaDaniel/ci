@@ -1,4 +1,11 @@
-const dragAndDrop = (subject: string, target: string, object = {}) => {
+interface dragAndDropProps {
+  subject: string
+  target: string
+  object?: {}
+  targetPosition?: number
+}
+
+const dragAndDrop = ({ subject, target, object = {}, targetPosition = 0 }: dragAndDropProps) => {
   const dataTransfer = new DataTransfer()
   dataTransfer.setData('application/json', JSON.stringify(object))
 
@@ -17,6 +24,7 @@ const dragAndDrop = (subject: string, target: string, object = {}) => {
 
   cy.get(subject).first().trigger('dragstart', { dataTransfer: dataTransfer })
   cy.get(target)
+    .eq(targetPosition)
     .trigger('dragstart', { dataTransfer })
     .trigger('dragover', { dataTransfer })
     .trigger('drop', { dataTransfer })

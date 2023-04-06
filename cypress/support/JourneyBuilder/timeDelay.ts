@@ -1,53 +1,51 @@
-import { journeyBuilder } from '../JourneyBuilder.page'
+import { journeyBuilder } from 'support/JourneyBuilder.page'
 
 class TimeDelay {
   timeDelayContainer = '[data-testid="timeDelay"]'
   iputUpIcon = '[data-testid="inputUpIcon"'
   iputDownIcon = '[data-testid="inputDownIcon"'
   days = '.group-container__item-container__item__select-input-range__dropdown [data-testid="days"]'
-  playbookNode = '.react-flow__node'
+  journeyNode = '.react-flow__node'
   inputNumber = '[data-testid="timeDelay"] .ant-input-number-input'
   selectUnits = '[data-testid="timeDelay"] .ant-select-selector'
   selectedItem = '[data-testid="timeDelay"] .ant-select-selection-item'
 
-  get getPlaybookNode() {
-    return cy.get(this.playbookNode)
+  get JourneyNode() {
+    return cy.get(this.journeyNode, { timeout: 2000 })
   }
 
-  get getTimeDelayContainer() {
+  get TimeDelayContainer() {
     return cy.get(this.timeDelayContainer)
   }
 
-  get getInputUpIcon() {
+  get InputUpIcon() {
     return cy.get(this.iputUpIcon)
   }
 
-  get getInputNumber() {
+  get InputNumber() {
     return cy.get(this.inputNumber)
   }
 
-  get getInputDownIcon() {
+  get InputDownIcon() {
     return cy.get(this.iputDownIcon)
   }
 
-  get getDays() {
+  get Days() {
     return cy.get(this.days)
   }
 
-  get getSelectUnits() {
+  get SelectUnits() {
     return cy.get(this.selectUnits)
   }
 
-  get getSelectedItem() {
+  get SelectedItem() {
     return cy.get(this.selectedItem)
   }
 
   openCriteriaLocator() {
     journeyBuilder.open()
-    cy.dragAndDrop(journeyBuilder.dataSourceTimeDelay, journeyBuilder.canvasPlaceholderArea)
-    cy.wait(100)
-    this.getPlaybookNode.last().click()
-    cy.wait(100)
+    cy.dragAndDrop({ subject: journeyBuilder.dataSourceTimeDelay, target: journeyBuilder.canvasPlaceholderArea })
+    this.JourneyNode.last().click()
   }
 }
 

@@ -1,4 +1,4 @@
-import { timeDelay } from '../../support/JourneyBuilder'
+import { timeDelay } from 'support/JourneyBuilder'
 
 context('Time delay configuration modal', () => {
   beforeEach(() => {
@@ -12,28 +12,28 @@ context('Time delay configuration modal', () => {
     })
 
     it('should increment the input number three times', () => {
-      timeDelay.getTimeDelayContainer.should('be.visible')
+      timeDelay.TimeDelayContainer.should('be.visible')
       for (let i = 0; i < 3; i++) {
-        timeDelay.getInputUpIcon.click()
+        timeDelay.InputUpIcon.click()
       }
-      timeDelay.getInputNumber.should('have.value', 3)
+      timeDelay.InputNumber.should('have.value', 3)
     })
 
     it('should increment and then decrement the input number', () => {
-      timeDelay.getInputUpIcon.click()
-      timeDelay.getInputDownIcon.click()
-      timeDelay.getInputNumber.should('have.value', 0)
+      timeDelay.InputUpIcon.click()
+      timeDelay.InputDownIcon.click()
+      timeDelay.InputNumber.should('have.value', 0)
     })
 
     it('should type "3" into the input number', () => {
-      timeDelay.getInputNumber.clear().type('11')
-      timeDelay.getInputNumber.should('have.value', 11)
+      timeDelay.InputNumber.clear().type('11')
+      timeDelay.InputNumber.should('have.value', 11)
     })
 
     it('should change the units to "Days"', () => {
-      timeDelay.getSelectUnits.click().wait(50)
-      timeDelay.getDays.click()
-      timeDelay.getSelectedItem.should('contain.text', 'Days')
+      timeDelay.SelectUnits.click().wait(50)
+      timeDelay.Days.click()
+      timeDelay.SelectedItem.should('contain.text', 'Days')
     })
   })
 })

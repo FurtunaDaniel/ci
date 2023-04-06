@@ -49,4 +49,7 @@ export default defineConfig({
       return config
     },
   },
+  video: false,
+  // to avoid false positive tests because of lazy back-end response
+  defaultCommandTimeout: 10000,
 });

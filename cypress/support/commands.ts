@@ -36,12 +36,12 @@
 //   }
 // }
 
-import './dragAndDrop'
-import './cognito'
+import 'support/cognito'
+import 'support/dragAndDrop'
 declare global {
   namespace Cypress {
     interface Chainable {
-      dragAndDrop(subject: string, target: string, object?: any): Chainable<Element>
+      dragAndDrop(props: dragAndDropProps): Chainable<Element>
     }
   }
 }

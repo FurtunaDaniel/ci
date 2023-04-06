@@ -9,7 +9,7 @@ describe('User log out functionality', () => {
 
       cy.url().should('include', '/signin')
 
-      cy.visit(`${Cypress.env('environmentUrl')}/journeys/playbook/new`)
+      cy.visit(`${Cypress.env('environmentUrl')}/journeys/journey/new`)
 
       cy.url().should('include', '/signin')
     })
