@@ -1,73 +1,33 @@
-name: ci
+name: Parallel Cypress Tests
+
 on: push
+
 jobs:
-  # example running all tests on a single machine
   test:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout 🛎
-        uses: actions/checkout@v3
-
-      - name: Run Cypress tests 🧪
-        # https://github.com/cypress-io/github-action
-        uses: cypress-io/github-action@v5
-
-  # example splitting all tests across GitHub machines
-  prepare:
-    runs-on: ubuntu-20.04
-    # explicitly set the output of this job
-    # so that other jobs can use it
-    outputs:
-      matrix: ${{ steps.prepare.outputs.matrix }}
-    steps:
-      # generate the list using a bash script
-      - name: Create matrix ⊹
-        id: prepare
-        # for reusable workflow, must use the full action reference
-        uses: bahmutov/gh-build-matrix@main
-        with:
-          n: 3 # number of containers to output
-
-      - name: Print result 🖨
-        run: echo '${{ steps.prepare.outputs.matrix }}'
-
-  test-split:
-    needs: prepare
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
-      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [14.x]
+        browser: [chrome, firefox]
+    services:
+      cypress:
+        image: cypress/included:8.7.0
     steps:
-      - name: Checkout 🛎
-        uses: actions/checkout@v3
-      - name: Run split Cypress tests 🧪
-        # https://github.com/cypress-io/github-action
-        uses: cypress-io/github-action@v5
-        env:
-          SPLIT: ${{ strategy.job-total }}
-          SPLIT_INDEX: ${{ strategy.job-index }}
-          DEBUG: cypress-split
-          ENVIRONMENT: development
-          TEST_AUTOMATION_USERNAME: ${{ secrets.DEV_TEST_AUTOMATION_USERNAME }}
-          TEST_AUTOMATION_PASSWORD: ${{ secrets.DEV_TEST_AUTOMATION_PASSWORD }}
-          region: ${{ secrets.AWS_COGNITO_REGION }}
-          userPoolId: ${{secrets.REACT_APP_USER_POOL_ID}}
-          userPoolWebClientId: ${{secrets.REACT_APP_APP_CLIENT_ID}}
-          # pass GitHub token to detect new build vs re-run build
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          record: false
-  # cypress-run:
-  #   # https://github.com/bahmutov/cypress-workflows
-  #   uses: bahmutov/cypress-workflows/.github/workflows/split.yml@v1
-  #   with:
-  #     n: 4
-  #   env:
-  #     ENVIRONMENT: development
-  #     TEST_AUTOMATION_USERNAME: ${{ secrets.DEV_TEST_AUTOMATION_USERNAME }}
-  #     TEST_AUTOMATION_PASSWORD: ${{ secrets.DEV_TEST_AUTOMATION_PASSWORD }}
-  #     region: ${{ secrets.AWS_COGNITO_REGION }}
-  #     userPoolId: ${{secrets.REACT_APP_USER_POOL_ID}}
-  #     userPoolWebClientId: ${{secrets.REACT_APP_APP_CLIENT_ID}}
-  #     # pass GitHub token to detect new build vs re-run build
-  #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  #     record: false
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: npm install
+    - name: Run tests
+      uses: cypress-io/github-action@v2.7.2
+      with:
+        record: false
+        parallel: true
+        group: ${{ matrix.browser }}
+        spec: cypress/e2e/**/*
+      env:
+        TEST_AUTOMATION_USERNAME: ${{ secrets.DEV_TEST_AUTOMATION_USERNAME }}
+        TEST_AUTOMATION_PASSWORD: ${{ secrets.DEV_TEST_AUTOMATION_PASSWORD }}
+        ENVIRONMENT: development
+        region: ${{ secrets.AWS_COGNITO_REGION }}
+        userPoolId: ${{secrets.REACT_APP_USER_POOL_ID}}
+        userPoolWebClientId: ${{secrets.REACT_APP_APP_CLIENT_ID}}
