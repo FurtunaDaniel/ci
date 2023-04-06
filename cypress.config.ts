@@ -1,4 +1,5 @@
 import { defineConfig } from "cypress";
+const cypressSplit = require("cypress-split");
 
 require("dotenv").config();
 
@@ -43,6 +44,9 @@ export default defineConfig({
   viewportWidth: 1280,
   viewportHeight: 800,
   e2e: {
-    setupNodeEvents(on, config) {},
+    setupNodeEvents(on, config) {
+      cypressSplit(on, config)
+      return config
+    },
   },
 });
