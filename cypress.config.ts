@@ -53,6 +53,8 @@ export default defineConfig({
   // to avoid false positive tests because of lazy back-end response
   defaultCommandTimeout: 10000,
   retries: {
+    // Configure retry attempts for `cypress run`
+    // Default is 0
     runMode: 3,
   },
 });
