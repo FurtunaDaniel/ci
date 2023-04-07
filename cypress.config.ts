@@ -45,11 +45,14 @@ export default defineConfig({
   viewportHeight: 800,
   e2e: {
     setupNodeEvents(on, config) {
-      cypressSplit(on, config)
-      return config
+      cypressSplit(on, config);
+      return config;
     },
   },
   video: false,
   // to avoid false positive tests because of lazy back-end response
   defaultCommandTimeout: 10000,
+  retries: {
+    runMode: 3,
+  },
 });
