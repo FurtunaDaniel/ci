@@ -8,22 +8,12 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node-version: [16.x]
-        browser: [chrome, firefox]
-    services:
-      cypress:
-        image: cypress/included:9.4.1
+        node-version: [14.x]
     steps:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: npm install
     - name: Run tests
-      uses: cypress-io/github-action@v5
-      with:
-        record: false
-        parallel: true
-        group: ${{ matrix.browser }}
-        spec: cypress/e2e/**/*
       env:
         TEST_AUTOMATION_USERNAME: ${{ secrets.DEV_TEST_AUTOMATION_USERNAME }}
         TEST_AUTOMATION_PASSWORD: ${{ secrets.DEV_TEST_AUTOMATION_PASSWORD }}
@@ -31,3 +21,4 @@ jobs:
         region: ${{ secrets.AWS_COGNITO_REGION }}
         userPoolId: ${{secrets.REACT_APP_USER_POOL_ID}}
         userPoolWebClientId: ${{secrets.REACT_APP_APP_CLIENT_ID}}
+      run: npx cypress run --parallel --ci-build-id ${{ github.run_id }} --record false
