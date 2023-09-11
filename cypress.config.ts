@@ -43,6 +43,7 @@ export default defineConfig({
   env: setEnvironment(),
   viewportWidth: 1280,
   viewportHeight: 800,
+  ...(process.env.CYPRESS_PROJECT_ID && { projectId: process.env.CYPRESS_PROJECT_ID }),
   e2e: {
     setupNodeEvents(on, config) {
       cypressSplit(on, config);
