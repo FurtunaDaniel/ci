@@ -1,0 +1,60 @@
+{
+  "data": [
+    {
+      "key": "AccountId",
+      "name": "Account ID",
+      "type": "reference",
+      "required": false,
+      "updateable": true,
+      "createable": true
+    },
+    {
+      "key": "Name",
+      "name": "Name",
+      "type": "string",
+      "required": true,
+      "updateable": true,
+      "createable": true
+    },
+    {
+      "key": "M_OpportunitySubcategory__c",
+      "name": "_OpportunitySubcategory",
+      "type": "string",
+      "required": false,
+      "updateable": true,
+      "createable": true
+    },
+    {
+      "key": "Description",
+      "name": "Description",
+      "type": "textarea",
+      "required": false,
+      "updateable": true,
+      "createable": true
+    },
+    {
+      "key": "OrderNumber__c",
+      "name": "Order Number",
+      "type": "string",
+      "required": false,
+      "updateable": true,
+      "createable": true
+    },
+    {
+      "key": "M_InstancePriceLimit__c",
+      "name": "_InstancePriceLimit",
+      "type": "double",
+      "required": false,
+      "updateable": true,
+      "createable": true
+    },
+    {
+      "key": "LastModifiedDate",
+      "name": "Last Modified Date",
+      "type": "datetime",
+      "required": true,
+      "updateable": false,
+      "createable": false
+    }
+  ]
+}

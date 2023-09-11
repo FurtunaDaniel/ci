@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "name": "Account"
+    },
+    {
+      "name": "Case"
+    },
+    {
+      "name": "Opportunity"
+    },
+    {
+      "name": "Contact"
+    },
+    {
+      "name": "Contract"
+    },
+    {
+      "name": "Lead"
+    },
+    {
+      "name": "Task"
+    }
+  ]
+}

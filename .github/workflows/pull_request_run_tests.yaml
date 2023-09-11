@@ -1,8 +1,8 @@
-name: Run unit tests on PR opened
+name: Run tests on PR opened
 on: pull_request
 
 jobs:
-  build:
+  unit-test-run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
@@ -22,7 +22,6 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
       - name: Setup Node.js environment v16
         uses: actions/setup-node@v3
         with:
@@ -36,10 +35,11 @@ jobs:
         env:
           NODE_ENV: dev
 
-      - name: Test Report
-        uses: dorny/test-reporter@v1
-        if: success() || failure()    # run this step even if previous step failed
-        with:
-          name: JEST Tests            # Name of the check run which will be created
-          path: coverage/clover.xml    # Path to test results
-          reporter: jest-junit 
+      # - name: Test Report
+      #   uses: dorny/test-reporter@v1
+      #   if: success() || failure() # run this step even if previous step failed
+      #   with:
+      #     name: JEST Tests # Name of the check run which will be created
+      #     path: coverage/clover.xml # Path to test results
+      #     reporter: jest-junit
+

@@ -1,0 +1,81 @@
+{
+  "columns": [
+    {
+      "title": "Account",
+      "key": "account",
+      "type": "string"
+    },
+    {
+      "title": "Users",
+      "key": "totalUsers",
+      "type": "number"
+    },
+    {
+      "title": "CS Manager",
+      "key": "csManager",
+      "type": "string"
+    },
+    {
+      "title": "Participated Since",
+      "key": "participatedSince",
+      "type": "string"
+    },
+    {
+      "title": "Account distribution for product stay duration",
+      "key": "productStayDuration",
+      "type": "composite"
+    },
+    {
+      "title": "Account distribution for # of service tickets",
+      "key": "serviceTickets",
+      "type": "composite"
+    },
+    {
+      "title": "Churn Probability",
+      "key": "churnProbability",
+      "type": "composite"
+    }
+  ],
+  "rows": [
+    {
+      "id": "0044587ac45fe7ee944da1e20d5bbc1c9caf58191955f87001c5e054",
+      "account": "Openlane",
+      "totalUsers": 10,
+      "csManager": "John Doe",
+      "participatedSince": "2020-01-01",
+      "productStayDuration": {
+        "old": 95,
+        "new": 152,
+        "unit": "months",
+        "impact": "positive"
+      },
+      "serviceTickets": { "old": 51, "new": 51 },
+      "churnProbability": {
+        "old": 71.9,
+        "new": 60.2,
+        "unit": "percentage",
+        "impact": "negative"
+      }
+    },
+    {
+      "id": "0044587ac45fe7ee944da1e20d5bbc1c9caf58191955f87001c5e055",
+      "account": "ClosedLane",
+      "totalUsers": 10,
+      "csManager": "Jane Doe",
+      "participatedSince": "2020-01-01",
+      "productStayDuration": {
+        "old": 95,
+        "new": 152,
+        "unit": "months",
+        "impact": "positive"
+      },
+      "serviceTickets": { "old": 51, "new": 51 },
+      "churnProbability": {
+        "old": 71.9,
+        "new": 60.2,
+        "unit": "percentage",
+        "impact": "negative"
+      }
+    }
+  ]
+}

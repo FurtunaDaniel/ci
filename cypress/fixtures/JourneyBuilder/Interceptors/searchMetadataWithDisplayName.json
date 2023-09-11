@@ -1,0 +1,177 @@
+{
+  "data": [
+    {
+      "order": [
+        {
+          "key": "gainsight",
+          "name": "gainsight",
+          "solutionInstanceId": "824ef8e2-0df4-42cf-9e31-98db1ece6a61"
+        },
+        {
+          "key": "sf_1i0025dxe6kkg8jcv1zrb42nk97l9wbigcdp",
+          "name": "sf_1i0025dxe6kkg8jcv1zrb42nk97l9wbigcdp",
+          "magnifyDisplayName": "¯\\_(ツ)_/¯ display name"
+        },
+        {
+          "key": "RespondedDate",
+          "name": "Responded Date",
+          "type": "datetime"
+        }
+      ],
+      "type": "field"
+    },
+    {
+      "order": [
+        {
+          "key": "gainsight",
+          "name": "gainsight"
+        },
+        {
+          "key": "Company",
+          "name": "Company",
+          "magnifyDisplayName": "(^‿^ ) display Company"
+        }
+      ],
+      "type": "object"
+    },
+    {
+      "order": [
+        {
+          "key": "gainsight",
+          "name": "gainsight",
+          "solutionInstanceId": "824ef8e2-0df4-42cf-9e31-98db1ece6a61"
+        },
+        {
+          "key": "Survey_Participant",
+          "name": "Survey_Participant",
+          "magnifyDisplayName": "(^‿^ ) Survey"
+        },
+        {
+          "key": "RespondedBy",
+          "name": "Responded By",
+          "type": "lookup"
+        }
+      ],
+      "type": "field"
+    },
+    {
+      "order": [
+        {
+          "key": "gainsight",
+          "name": "gainsight",
+          "solutionInstanceId": "824ef8e2-0df4-42cf-9e31-98db1ece6a61"
+        },
+        {
+          "key": "Survey_Participant",
+          "name": "Survey_Participant",
+          "magnifyDisplayName": "(*_*) Survey Participant"
+        },
+        {
+          "key": "Responded",
+          "name": "Responded",
+          "type": "boolean"
+        }
+      ],
+      "type": "field"
+    },
+    {
+      "order": [
+        {
+          "key": "gainsight",
+          "name": "gainsight",
+          "solutionInstanceId": "824ef8e2-0df4-42cf-9e31-98db1ece6a61"
+        },
+        {
+          "key": "Survey_Participant",
+          "name": "Survey_Participant"
+        },
+        {
+          "key": "Responded Date",
+          "name": "Responded Date",
+          "type": "datetime"
+        }
+      ],
+      "type": "field"
+    },
+    {
+      "order": [
+        {
+          "key": "gainsight",
+          "name": "gainsight",
+          "solutionInstanceId": "824ef8e2-0df4-42cf-9e31-98db1ece6a61"
+        },
+        {
+          "key": "survey_participant",
+          "name": "survey_participant",
+          "magnifyDisplayName": "(*‿*) Survey Party"
+        },
+        {
+          "key": "Responded By",
+          "name": "Responded By",
+          "type": "lookup"
+        }
+      ],
+      "type": "field"
+    },
+    {
+      "order": [
+        {
+          "key": "gainsight",
+          "name": "gainsight",
+          "solutionInstanceId": "824ef8e2-0df4-42cf-9e31-98db1ece6a61"
+        },
+        {
+          "key": "survey_participant",
+          "name": "survey_participant",
+          "magnifyDisplayName": "ツ I'm groot"
+          
+        },
+        {
+          "key": "Responded",
+          "name": "Responded",
+          "type": "boolean"
+        }
+      ],
+      "type": "field"
+    },
+    {
+      "order": [
+        {
+          "key": "gainsight",
+          "name": "gainsight",
+          "solutionInstanceId": "824ef8e2-0df4-42cf-9e31-98db1ece6a61"
+        },
+        {
+          "key": "survey_participant",
+          "name": "survey_participant"
+        },
+        {
+          "key": "RespondedDate",
+          "name": "Responded Date",
+          "type": "datetime"
+        }
+      ],
+      "type": "field"
+    },
+    {
+      "order": [
+        {
+          "key": "gainsight",
+          "name": "gainsight",
+          "solutionInstanceId": "824ef8e2-0df4-42cf-9e31-98db1ece6a61"
+        },
+        {
+          "key": "Company",
+          "name": "Company",
+          "magnifyDisplayName": "(^‿^ )Billing Address"
+        },
+        {
+          "key": "BillingAddress",
+          "name": "Billing Address",
+          "type": "string"
+        }
+      ],
+      "type": "field"
+    }
+  ]
+}

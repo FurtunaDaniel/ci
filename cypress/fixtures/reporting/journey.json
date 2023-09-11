@@ -1,0 +1,12 @@
+{
+  "title": "Journey 1",
+  "currState": "EXECUTING",
+  "playbookId": "playbookId",
+  "segmentDefinition": "segmentDefinition",
+  "csManagers": ["csManager1", "csManager2"],
+  "createdBy": "mock@mock.com",
+  "stateHistory": {
+    "EXECUTING": "2021-01-01"
+  },
+  "version": 1
+}

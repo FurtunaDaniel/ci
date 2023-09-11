@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "name": "salesforce",
+      "connections": [
+        {
+          "name": "mvl's Salesforce account - dev- 02/06 - 3",
+          "date": 1675735743476,
+          "solutionInstanceId": "804f47c3-eade-4671-9418-68fdd4564977"
+        }
+      ]
+    },
+    {
+      "name": "gainsight",
+      "connections": [
+        {
+          "name": "DRO Gainsight Account 1",
+          "date": 1672760299862,
+          "solutionInstanceId": "fb41a3b6-6f41-4aca-9e03-a1f2f565d586"
+        }
+      ]
+    },
+    {
+      "name": "zendesk",
+      "connections": [
+        {
+          "name": "mvl's Zendesk account 3",
+          "date": 1677724061034,
+          "solutionInstanceId": "901f0c53-ffc8-444c-b174-8d54adb97c36"
+        }
+      ]
+    },
+    {
+      "name": "marketo",
+      "connections": [
+        {
+          "name": "mvl's Marketo account 3",
+          "date": 1677170776319,
+          "solutionInstanceId": "a06e851c-d991-4296-a05c-eb65ae97237c"
+        }
+      ]
+    }
+  ]
+}

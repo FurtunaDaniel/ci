@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "order": [
+        {
+          "key": "salesforce",
+          "name": "salesforce"
+        },
+        {
+          "key": "Account",
+          "name": "Account"
+        },
+        {
+          "key": "OwnerId",
+          "name": "Owner ID",
+          "type": "reference"
+        }
+      ],
+      "type": "field"
+    },
+    {
+      "order": [
+        {
+          "key": "salesforce",
+          "name": "salesforce"
+        },
+        {
+          "key": "Account",
+          "name": "Account"
+        },
+        {
+          "key": "MasterRecordId",
+          "name": "Master Record ID",
+          "type": "reference"
+        }
+      ],
+      "type": "field"
+    },
+    {
+      "order": [
+        {
+          "key": "zendesk",
+          "name": "zendesk"
+        },
+        {
+          "key": "Organization",
+          "name": "Organization"
+        },
+        {
+          "key": "Id",
+          "name": "Id",
+          "type": "integer"
+        }
+      ],
+      "type": "field"
+    }
+  ]
+}

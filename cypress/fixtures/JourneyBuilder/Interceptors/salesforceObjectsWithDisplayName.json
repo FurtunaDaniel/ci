@@ -1,0 +1,11 @@
+{
+  "data": [
+    { "name": "Account", "magnifyDisplayName": "¯\\_(ツ)_/¯ Account" },
+    { "name": "Case", "magnifyDisplayName": "㋛ Case" },
+    { "name": "Opportunity", "magnifyDisplayName": "¯\\_(ツ)_/¯ Opportunity" },
+    { "name": "Contact", "magnifyDisplayName": "ツ Contact" },
+    { "name": "Contract", "magnifyDisplayName": "(^‿^ ) Contract" },
+    { "name": "Lead", "magnifyDisplayName": "(*_*) Lead" },
+    { "name": "Task", "magnifyDisplayName": "ヽ( ͝ ° ͜ʖ͡° )ﾉ Task" }
+  ]
+}
