@@ -1,5 +1,21 @@
-name: Cypress Tests
-on: [push]
+name: Manual Dashboard E2E Integration Test Suite
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        description: Choose the target environment you wish to run the suite against
+        default: 'development'
+        required: false
+        options:
+          - development
+          - staging
+          - production
+      specs:
+        type: string
+        description: 'Specs (default: cypress/ui/smoke)'
+        required: false
+        default: 'cypress/e2e/integration/UI/smoke'
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -19,14 +35,14 @@ jobs:
         with:
           # Starts web server for E2E tests - replace with your own server invocation
           # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
-          start: npm start
-          wait-on: 'http://localhost:3000' # Waits for above
+          # start: npm start
+          # wait-on: "http://localhost:3000" # Waits for above
           # Records to Cypress Cloud
           # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
           record: true
           parallel: true # Runs test in parallel using settings above
-          group: "UI - Smoke test"
-          spec: cypress/e2e/integration/UI/smoke/*
+          group: "UI - Integration tests"
+          spec: ${{ github.event.inputs.specs }}**
         env:
           # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
           # in GitHub repo → Settings → Secrets → Actions
@@ -37,9 +53,9 @@ jobs:
           ENVIRONMENT: development
           TEST_AUTOMATION_USERNAME: ${{ secrets.DEV_TEST_AUTOMATION_USERNAME }}
           TEST_AUTOMATION_PASSWORD: ${{ secrets.DEV_TEST_AUTOMATION_PASSWORD }}
-          
+
           region: ${{ secrets.AWS_COGNITO_REGION }}
           userPoolId: ${{secrets.REACT_APP_USER_POOL_ID}}
-          userPoolWebClientId: ${{secrets.REACT_APP_APP_CLIENT_ID}}
+          userPoolWebClientId:
+            ${{secrets.REACT_APP_APP_CLIENT_ID}}
             # pass GitHub token to detect new build vs re-run build
-            
