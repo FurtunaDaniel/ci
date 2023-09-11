@@ -1,9 +1,8 @@
-name: Manual Dashboard E2E Integration Test Suite
+name: Manual Cypress Cloud E2E Integration Test Suite
 on:
   workflow_dispatch:
     inputs:
       environment:
-        type: choice
         description: Choose the target environment you wish to run the suite against
         default: 'development'
         required: false
@@ -12,10 +11,9 @@ on:
           - staging
           - production
       specs:
-        type: string
-        description: 'Specs (default: cypress/ui/smoke)'
+        description: 'Specs (default: cypress/e2e/integration/UI/smoke/)'
         required: false
-        default: 'cypress/e2e/integration/UI/smoke'
+        default: 'cypress/e2e/integration/UI/smoke/'
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -50,7 +48,7 @@ jobs:
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           # Creating a token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ENVIRONMENT: development
+          ENVIRONMENT: ${{ github.event.inputs.environment }}
           TEST_AUTOMATION_USERNAME: ${{ secrets.DEV_TEST_AUTOMATION_USERNAME }}
           TEST_AUTOMATION_PASSWORD: ${{ secrets.DEV_TEST_AUTOMATION_PASSWORD }}
 
