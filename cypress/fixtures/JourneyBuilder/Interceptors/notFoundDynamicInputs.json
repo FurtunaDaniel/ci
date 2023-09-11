@@ -1,0 +1,7 @@
+{
+  "type": "/errors/metadata",
+  "message": "Failed to fetch dynamic input values for the specified field",
+  "status": 404,
+  "detail": "There are no dynamic input fields available for the specified field",
+  "instance": "/v1/core/metadata/dynamicInputs?platform=snowflake&object=ACC_ANA_LOGIN"
+}

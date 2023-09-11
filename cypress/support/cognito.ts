@@ -3,7 +3,7 @@
 
 // @ts-nocheck
 
-import Amplify, { Auth } from 'aws-amplify'
+import { Amplify, Auth } from 'aws-amplify'
 
 declare global {
   namespace Cypress {
@@ -62,4 +62,12 @@ const loginByCognitoApi = (username, password) => {
   })
 }
 
-Cypress.Commands.add('loginByCognitoApi', loginByCognitoApi)
+Cypress.Commands.add('loginByCognitoApi', (username, password) => {
+  cy.session(username, () => loginByCognitoApi(username, password), {
+    validate() {
+      cy.visit(`${Cypress.env('environmentUrl')}/`)
+      // revalidate our session to make sure we are logged in
+      cy.contains('Welcome to Magnify').should('be.visible')
+    },
+  })
+})

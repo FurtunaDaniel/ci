@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "order": [
+        {
+          "key": "salesforce",
+          "name": "salesforce"
+        },
+        {
+          "key": "Account",
+          "name": "Account"
+        },
+        {
+          "key": "url_data_type_field__c",
+          "name": "url_data_type_field",
+          "type": "url"
+        }
+      ],
+      "type": "field"
+    },
+    {
+      "order": [
+        {
+          "key": "gainsight",
+          "name": "gainsight"
+        },
+        {
+          "key": "Company",
+          "name": "Company"
+        },
+        {
+          "key": "Modified Date",
+          "name": "Modified Date"
+        }
+      ],
+      "type": "object"
+    }
+  ]
+}

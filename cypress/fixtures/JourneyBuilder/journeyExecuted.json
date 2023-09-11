@@ -1,0 +1,71 @@
+{
+  "data": {
+    "version": 6,
+    "dslUrl": "db86d20e-61b6-46c7-a73f-b78c089b61a6-6.json",
+    "integrations": [
+      {
+        "platform": "salesforce"
+      }
+    ],
+    "tenantId": "1",
+    "createdAt": 1682000664662,
+    "goal": {},
+    "lastUpdatedAt": 1682000664662,
+    "createdBy": "daniel.furtuna@assist.ro",
+    "playbookId": "db86d20e-61b6-46c7-a73f-b78c089b61a6",
+    "isActive": true,
+    "stateHistory": {
+      "DRAFT": "2023-04-20T14:24:24.662+00:00",
+      "EXECUTING": "2023-04-25T15:20:45.325+00:00"
+    },
+    "metrics": [],
+    "description": "",
+    "currState": "COMPLETED",
+    "title": "test basic completed journey",
+    "validationErrors": [],
+    "dsl": {
+      "startAt": "segment1",
+      "states": {
+        "segment1": {
+          "type": "segment",
+          "payload": {},
+          "description": "Segment",
+          "position": {
+            "x": 380,
+            "y": 50
+          },
+          "next": "createTask226536638337"
+        },
+        "createTask226536638337": {
+          "type": "action",
+          "payload": {},
+          "description": "Create Task",
+          "position": {
+            "x": 380,
+            "y": 260
+          },
+          "actionId": "5d8797b7-3cfc-4fa2-aa01-8c229f904cd9",
+          "actionLevel": "account",
+          "action": "create",
+          "platform": "salesforce",
+          "object": "Task",
+          "solutionInstanceId": "b327287c-22c2-458a-8535-cddcf20967a8",
+          "next": "timeDelay898163633593"
+        },
+        "timeDelay898163633593": {
+          "type": "timeDelay",
+          "payload": {
+            "amount": 0,
+            "units": "hours"
+          },
+          "description": "Time delay",
+          "position": {
+            "x": 380,
+            "y": 470
+          },
+          "end": true
+        }
+      }
+    }
+  }
+}

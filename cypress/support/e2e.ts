@@ -19,5 +19,20 @@ import 'support/commands'
 Cypress.on('uncaught:exception', (err) => {
   // returning false here prevents Cypress from
   // failing the test
-  return !err.message.includes('ResizeObserver loop limit exceeded')
+  const conditions = ['ResizeObserver loop limit exceeded', 'ResizeObserver loop completed']
+
+  return !conditions.some((condition) => err.message.includes(condition))
+})
+declare global {
+  interface Window {
+    ga: any
+    pendo: any
+  }
+}
+
+Cypress.on('window:before:load', (window) => {
+  // Stub Google Analytics
+  window.ga = cy.stub().as('ga')
+  // Stub Pendo
+  window.pendo = cy.stub().as('pendo')
 })

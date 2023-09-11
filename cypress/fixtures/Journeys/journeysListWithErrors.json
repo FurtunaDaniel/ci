@@ -1,0 +1,375 @@
+{
+  "data": [
+    {
+      "isActive": true,
+      "version": 1,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T13:03:27.607+01:00",
+        "EXECUTING": "2023-04-24T13:03:30.568+01:00",
+        "FAILED": "2023-04-24T12:03:34.101Z"
+      },
+      "integrations": [
+        {
+          "platform": "snowflake"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [],
+      "lastUpdatedAt": 1682337807607,
+      "createdBy": "mock@email.com",
+      "playbookId": "6fce0202-48de-42fd-bf42-a87e9907c5c2",
+      "currState": "FAILED",
+      "title": "IG Test - Create Snowflake Journey"
+    },
+    {
+      "isActive": true,
+      "version": 1,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T12:31:30.660+01:00",
+        "EXECUTING": "2023-04-24T12:31:33.367+01:00"
+      },
+      "integrations": [
+        {
+          "platform": "snowflake"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [],
+      "lastUpdatedAt": 1682335890659,
+      "createdBy": "mock@email.com",
+      "playbookId": "238a25fb-00e2-4432-be27-35c6d26baaa9",
+      "currState": "EXECUTING",
+      "title": "IG Test - Create Snowflake Journey"
+    },
+    {
+      "isActive": true,
+      "version": 1,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T12:27:26.345+01:00"
+      },
+      "integrations": [
+        {
+          "platform": "snowflake"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [],
+      "lastUpdatedAt": 1682335646344,
+      "createdBy": "mock@email.com",
+      "playbookId": "3db6ea53-910f-4052-af06-b2e5aea2c3c1",
+      "currState": "DRAFT",
+      "title": "IG Test - Create Snowflake Journey"
+    },
+    {
+      "isActive": true,
+      "version": 1,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T10:36:07.521+00:00",
+        "EXECUTING": "2023-04-24T11:16:54.237+00:00"
+      },
+      "integrations": [
+        {
+          "platform": "salesforce"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [
+        {
+          "totalAccount": 1,
+          "timestamp": 1682335014237,
+          "totalUsers": 1
+        },
+        {
+          "totalAccount": 1,
+          "timestamp": 1682334423732,
+          "totalUsers": 1
+        },
+        {
+          "totalAccount": 1,
+          "timestamp": 1682333569377,
+          "totalUsers": 1
+        },
+        {
+          "totalAccount": 1,
+          "timestamp": 1682333074313,
+          "totalUsers": 1
+        }
+      ],
+      "lastUpdatedAt": 1682332567521,
+      "createdBy": "StevenB@magnify.io",
+      "playbookId": "153f76e3-b63c-4945-beae-0c76e61e1845",
+      "currState": "COMPLETED",
+      "title": "sbTest24Apr2"
+    },
+    {
+      "isActive": true,
+      "version": 11,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T09:23:44.034+00:00"
+      },
+      "integrations": [
+        {
+          "platform": "salesforce"
+        },
+        {
+          "platform": "gainsight"
+        }
+      ],
+      "tenantId": "1",
+      "lastUpdatedAt": 1682328224014,
+      "createdBy": "daniel.furtuna@assist.ro",
+      "playbookId": "db86d20e-61b6-46c7-a73f-b78c089b61a6",
+      "currState": "DRAFT",
+      "title": "test",
+      "isInvalid": true
+    },
+    {
+      "isActive": true,
+      "version": 1,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T09:04:49.873+00:00",
+        "EXECUTING": "2023-04-24T09:05:06.900+00:00"
+      },
+      "integrations": [
+        {
+          "platform": "salesforce"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [
+        {
+          "totalAccount": 1,
+          "timestamp": 1682327106901,
+          "totalUsers": 1
+        }
+      ],
+      "lastUpdatedAt": 1682327089872,
+      "createdBy": "StevenB@magnify.io",
+      "playbookId": "f382ee3c-068d-42b8-9efc-8bc23f514694",
+      "currState": "COMPLETED",
+      "title": "sbTest24Apr"
+    },
+    {
+      "isActive": true,
+      "version": 1,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T08:07:44.317+00:00"
+      },
+      "integrations": [
+        {
+          "platform": "salesforce"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [],
+      "lastUpdatedAt": 1682323664317,
+      "createdBy": "testautomation@magnify.io",
+      "playbookId": "e73652b7-9b29-42b4-a0a2-1551320fab74",
+      "currState": "DRAFT",
+      "title": "Smoke Test #1 - Automation",
+      "isInvalid": true
+    },
+    {
+      "isActive": true,
+      "version": 1,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T08:01:35.029+00:00",
+        "EXECUTING": "2023-04-24T08:01:40.476Z",
+        "FAILED": "2023-04-24T08:01:44.221Z"
+      },
+      "integrations": [
+        {
+          "platform": "salesforce"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [],
+      "lastUpdatedAt": 1682323295028,
+      "createdBy": "testautomation@magnify.io",
+      "playbookId": "fead4c60-4a01-40ca-b00f-ce075ce80600",
+      "currState": "FAILED",
+      "title": "Smoke Test #1 - Automation"
+    },
+    {
+      "isActive": true,
+      "version": 2,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T08:01:32.252+00:00",
+        "EXECUTING": "2023-04-24T08:01:52.518+00:00"
+      },
+      "integrations": [
+        {
+          "platform": "salesforce"
+        },
+        {
+          "platform": "gainsight"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [
+        {
+          "totalAccount": 1,
+          "timestamp": 1682323312542,
+          "totalUsers": 2
+        }
+      ],
+      "lastUpdatedAt": 1682323292251,
+      "createdBy": "cristian.istrate@assist.ro",
+      "playbookId": "45f9f7d8-63cc-4468-9d7d-a209d0649de3",
+      "currState": "COMPLETED",
+      "title": "Cristi test new changes"
+    },
+    {
+      "isActive": true,
+      "version": 1,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T07:40:56.319+00:00",
+        "EXECUTING": "2023-04-24T07:41:01.437Z",
+        "FAILED": "2023-04-24T07:41:05.119Z"
+      },
+      "integrations": [
+        {
+          "platform": "salesforce"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [],
+      "lastUpdatedAt": 1682322056318,
+      "createdBy": "testautomation@magnify.io",
+      "playbookId": "80edb69a-53f8-49ad-b1ee-5f03b1b61f1e",
+      "currState": "FAILED",
+      "title": "Smoke Test #1 - Automation"
+    },
+    {
+      "isActive": true,
+      "version": 1,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T07:22:24.601+00:00",
+        "EXECUTING": "2023-04-24T07:22:30.133Z",
+        "FAILED": "2023-04-24T07:22:31.149Z"
+      },
+      "integrations": [
+        {
+          "platform": "salesforce"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [],
+      "lastUpdatedAt": 1682320944544,
+      "createdBy": "testautomation@magnify.io",
+      "playbookId": "39c66d0c-998d-4117-9263-9a31345f0feb",
+      "currState": "FAILED",
+      "title": "Smoke Test #1 - Automation"
+    },
+    {
+      "isActive": true,
+      "version": 1,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T07:22:17.897+00:00",
+        "EXECUTING": "2023-04-24T07:22:23.445Z",
+        "FAILED": "2023-04-24T07:22:26.991Z"
+      },
+      "integrations": [
+        {
+          "platform": "salesforce"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [],
+      "lastUpdatedAt": 1682320937897,
+      "createdBy": "testautomation@magnify.io",
+      "playbookId": "697c6c59-3894-47f4-86fa-be50e1276d6f",
+      "currState": "FAILED",
+      "title": "Smoke Test #1 - Automation"
+    },
+    {
+      "isActive": true,
+      "version": 1,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T06:48:29.976+00:00",
+        "EXECUTING": "2023-04-24T06:48:36.488Z",
+        "FAILED": "2023-04-24T06:49:18.584Z"
+      },
+      "integrations": [
+        {
+          "platform": "salesforce"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [],
+      "lastUpdatedAt": 1682318909976,
+      "createdBy": "testautomation@magnify.io",
+      "playbookId": "b4d7a033-3f6e-4023-b01d-3f8c9d4dad24",
+      "currState": "FAILED",
+      "title": "Smoke Test #1 - Automation"
+    },
+    {
+      "isActive": true,
+      "version": 1,
+      "stateHistory": {
+        "DRAFT": "2023-04-24T04:12:58.470+00:00",
+        "EXECUTING": "2023-04-24T04:13:04.429Z",
+        "FAILED": "2023-04-24T04:13:46.697Z"
+      },
+      "integrations": [
+        {
+          "platform": "salesforce"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [],
+      "lastUpdatedAt": 1682309578470,
+      "createdBy": "testautomation@magnify.io",
+      "playbookId": "988eae10-0792-4330-b412-81a685d06cfc",
+      "currState": "FAILED",
+      "title": "Smoke Test #1 - Automation"
+    },
+    {
+      "isActive": true,
+      "version": 1,
+      "stateHistory": {
+        "DRAFT": "2023-04-21T11:18:59.176+00:00",
+        "EXECUTING": "2023-04-21T14:03:03.021+00:00"
+      },
+      "integrations": [
+        {
+          "platform": "salesforce"
+        }
+      ],
+      "tenantId": "1",
+      "segmentTotals": [
+        {
+          "totalAccount": 1,
+          "timestamp": 1682085783021,
+          "totalUsers": 1
+        },
+        {
+          "totalAccount": 1,
+          "timestamp": 1682085761019,
+          "totalUsers": 1
+        },
+        {
+          "totalAccount": 1,
+          "timestamp": 1682077487341,
+          "totalUsers": 1
+        },
+        {
+          "totalAccount": 1,
+          "timestamp": 1682076859955,
+          "totalUsers": 1
+        },
+        {
+          "totalAccount": 1,
+          "timestamp": 1682075972563,
+          "totalUsers": 1
+        }
+      ],
+      "lastUpdatedAt": 1682075939176,
+      "createdBy": "StevenB@magnify.io",
+      "playbookId": "ef750728-d604-4c35-83c6-18c755728c8c",
+      "currState": "COMPLETED",
+      "title": "sbTest21Apr"
+    }
+  ],
+  "total": 15
+}

@@ -1,0 +1,7 @@
+{
+  "type": "/errors/metadata",
+  "message": "Failed to fetch values for the specified field",
+  "status": 500,
+  "detail": "An unknown error occurred on the server that caused the response to fail",
+  "instance": "/v1/core/metadata/dynamicInputs"
+}
