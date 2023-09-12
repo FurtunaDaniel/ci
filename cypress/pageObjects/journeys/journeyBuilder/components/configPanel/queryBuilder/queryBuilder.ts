@@ -30,7 +30,7 @@ class QueryBuilder {
   }
 
   get GroupContainer() {
-    return cy.get(this.groupContainer)
+    return cy.get(this.groupContainer).should('be.visible')
   }
 
   get NonStringField() {
