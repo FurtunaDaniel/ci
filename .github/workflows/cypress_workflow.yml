@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false # https://github.com/cypress-io/github-action/issues/48
       matrix:
-        containers: [1, 2, 3, 4] # Uses 2 parallel instances
+        containers: [1, 2, 3, 4, 5] # Uses 5 parallel instances
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -33,7 +33,7 @@ jobs:
         with:
           record: true
           parallel: true # Runs test in parallel using settings above
-          group: "UI - Integration tests"
+          group: "UI - Test ${{ github.event.inputs.specs }}"
           spec: ${{ github.event.inputs.specs }}**
         env:
           # For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
@@ -43,11 +43,10 @@ jobs:
           # Creating a token https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ENVIRONMENT: ${{ github.event.inputs.environment }}
-          TEST_AUTOMATION_USERNAME: ${{ secrets.DEV_TEST_AUTOMATION_USERNAME }}
-          TEST_AUTOMATION_PASSWORD: ${{ secrets.DEV_TEST_AUTOMATION_PASSWORD }}
+          TEST_AUTOMATION_USERNAME: ${{ secrets.TEST_AUTOMATION_USERNAME }}
+          TEST_AUTOMATION_PASSWORD: ${{ secrets.TEST_AUTOMATION_PASSWORD }}
 
           region: ${{ secrets.AWS_COGNITO_REGION }}
           userPoolId: ${{secrets.REACT_APP_USER_POOL_ID}}
-          userPoolWebClientId:
-            ${{secrets.REACT_APP_APP_CLIENT_ID}}
+          userPoolWebClientId: ${{secrets.REACT_APP_APP_CLIENT_ID}}
             # pass GitHub token to detect new build vs re-run build
