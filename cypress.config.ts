@@ -28,7 +28,7 @@ const setEnvironment = () => {
     case "local":
       return {
         ...baseEnvironment,
-        environmentUrl: "https://app.dev.magnify.io/",
+        environmentUrl: "https://app.dev.magnify.io",
       };
 
     default:
@@ -52,7 +52,7 @@ export default defineConfig({
       return config;
     },
   },
-  video: false,
+  video: true,
   // to avoid false positive tests because of lazy back-end response
   defaultCommandTimeout: 15000,
   retries: {
