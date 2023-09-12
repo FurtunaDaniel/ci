@@ -258,7 +258,6 @@ class JourneyBuilder {
   }
 
   checkSalesforceSegmentCriteria() {
-    cy.wait(1000)
     // this function depends on buildSalesforceSegmentCriteria tasks
     this.checkStringOperatorsFields(this.segment.sideBar.FIELD_STRING)
     this.checkSelectOperatorsFields(this.segment.sideBar.FIELD_SELECT)
