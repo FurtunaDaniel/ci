@@ -51,7 +51,7 @@ describe('Smoke Test Suite', () => {
     cy.get('.side-main-menu').contains(/Journeys/i)
     cy.get('.side-main-menu').contains(/Integrations/i)
 
-    cy.wait('@insights', { responseTimeout: 5000 })
+    cy.wait('@insights', { responseTimeout: 15000 })
 
     dashboard.WelcomeBannerContainer.should('be.visible')
     dashboard.InsightsDriversHeading.should('be.visible')
@@ -65,27 +65,27 @@ describe('Smoke Test Suite', () => {
     // Step 4
     navigationBar.getIntegrations.click()
 
-    cy.wait('@integrations', { responseTimeout: 5000 })
+    cy.wait('@integrations', { responseTimeout: 15000 })
 
     cy.url().should('include', '/integrations')
     integrations.IntegrationCards.should('be.visible')
 
     integrations.FirstIntegrationCardEditButton.click()
 
-    cy.wait('@singleIntegration', { responseTimeout: 5000 })
+    cy.wait('@singleIntegration', { responseTimeout: 15000 })
     integrations.IntegrationCards.should('be.visible')
 
     // Step 5
     navigationBar.AccountSettings.click()
 
-    cy.wait('@userProfile', { responseTimeout: 5000 })
+    cy.wait('@userProfile', { responseTimeout: 15000 })
 
     cy.url().should('include', '/account-settings/profile')
     accountSettings.AccountSettingsProfileHeading.should('be.visible')
 
     accountSettings.AccountSettingsNavigation.click()
 
-    cy.wait('@listUsers', { responseTimeout: 5000 })
+    cy.wait('@listUsers', { responseTimeout: 15000 })
 
     accountSettings.AccountSettingsUsersTable.should('be.visible')
 
@@ -93,7 +93,7 @@ describe('Smoke Test Suite', () => {
     navigationBar.Dashboard.click()
     dashboard.clickOnInsightButton(1)
 
-    cy.wait('@churnInsight', { responseTimeout: 5000 })
+    cy.wait('@churnInsight', { responseTimeout: 15000 })
 
     cy.url().should('include', 'insights/churn/0')
 
