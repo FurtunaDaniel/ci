@@ -272,7 +272,7 @@ class JourneyBuilder {
     Object.keys(this.segment.STRING_OPERATORS).forEach((operator, operatorIndex) => {
       const currentOperator = this.segment.STRING_OPERATORS[operator]
 
-      this.segment.queryBuilder.GroupContainer.find(this.segment.queryBuilder.criteriaBuilderItemTitle)
+      this.segment.queryBuilder.GroupContainer.find(this.segment.queryBuilder.criteriaBuilderItemTitle).should('exist')
         .filter((_index: number, elt: any) => {
           return elt.innerText.match(new RegExp(fieldName))
         })
